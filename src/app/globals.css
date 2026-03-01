@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #C8943A;
+    --gold-light: #E8B86D;
+    --dark: #1A1209;
+    --dark2: #2C1F0E;
+    --cream: #F5EDD8;
+    --cream2: #FBF6EC;
+    --green: #2D5016;
+    --green-light: #4A7A28;
+    --text: #3D2B0F;
+    --muted: #6B4F2A;
+    --wa: #25D366;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply font-sans;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--cream2);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Layout helpers */
+  .section {
+    @apply py-16 px-[18px] md:py-20 md:px-7 lg:py-[100px] lg:px-10;
+  }
+  .container {
+    @apply max-w-[1160px] mx-auto;
+  }
+
+  /* Typography utilities */
+  .tag {
+    @apply text-[10px] tracking-[4px] font-bold text-inver-gold uppercase mb-[10px];
+  }
+  .title {
+    @apply font-heading font-bold text-[clamp(28px,7vw,50px)] leading-[1.1] mb-3.5;
+  }
+  .lead {
+    @apply text-[15px] text-inver-muted leading-[1.75] font-light max-w-[580px];
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 no-underline border-none font-sans font-semibold rounded-lg transition-all duration-200 whitespace-nowrap active:scale-[0.98];
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-gold {
+    @apply bg-inver-gold text-inver-dark active:bg-inver-gold-light lg:hover:bg-inver-gold-light lg:hover:-translate-y-0.5 lg:hover:shadow-[0_8px_22px_rgba(200,148,58,0.35)];
+  }
+  .btn-outline-gold {
+    @apply bg-transparent border-[1.5px] border-inver-gold text-inver-gold active:bg-inver-gold active:text-inver-dark lg:hover:bg-inver-gold lg:hover:text-inver-dark;
+  }
+  .btn-outline-w {
+    @apply bg-transparent border-[1.5px] border-inver-cream/40 text-inver-cream active:bg-inver-cream/10 lg:hover:border-inver-gold-light lg:hover:text-inver-gold-light;
+  }
+  .btn-wa {
+    @apply bg-inver-wa text-white active:bg-[#1ea855] lg:hover:bg-[#1ea855] lg:hover:-translate-y-0.5 lg:hover:shadow-[0_8px_20px_rgba(37,211,102,0.3)];
+  }
+
+  .btn-lg {
+    @apply text-[15px] py-[15px] px-[24px] lg:text-[16px] lg:py-4 lg:px-8;
+  }
+  .btn-md {
+    @apply text-[14px] py-3 px-5;
+  }
+  .btn-sm {
+    @apply text-[13px] py-2.5 px-4;
+  }
+  .btn-full {
+    @apply w-full;
+  }
+
+  /* Reveal Animations */
+  .reveal {
+    @apply opacity-0 translate-y-[22px] transition-all duration-500 ease-out;
+  }
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
