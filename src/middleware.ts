@@ -11,7 +11,8 @@ export function middleware(req: NextRequest) {
         return NextResponse.next();
     }
 
-    // De lo contrario, se parsea cabecera nativa y se infiere.
+    // Se prioriza SIEMPRE la autodetección del dispositivo (Fase 8).
+    // Si no hay cookie previa (emergencia), inferimos desde Accept-Language con fallback a Español.
     const acceptLang = req.headers.get("accept-language") || "";
     let detectedLang = DEFAULT_LANGUAGE;
 

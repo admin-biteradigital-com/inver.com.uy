@@ -49,23 +49,7 @@ export function Navbar() {
                         </a>
                     ))}
 
-                    {/* Lang selector Desktop */}
-                    <div className="flex gap-1 ml-4">
-                        {(["es", "en", "pt"] as Lang[]).map((l) => (
-                            <button
-                                key={l}
-                                onClick={() => setLang(l)}
-                                className={`py-1 px-2.5 rounded border border-inver-gold/35 text-[11px] font-bold tracking-[1px] font-sans transition-all 
-                  ${lang === l
-                                        ? "bg-inver-gold border-inver-gold text-inver-dark"
-                                        : "bg-transparent text-inver-cream"
-                                    }
-                `}
-                            >
-                                {l.toUpperCase()}
-                            </button>
-                        ))}
-                    </div>
+
 
                     <a href="#contacto" className="ml-4 btn btn-gold btn-sm">
                         {t("nav.book")}
@@ -102,26 +86,7 @@ export function Navbar() {
                         </a>
                     ))}
 
-                    <div className="flex gap-2 mt-5">
-                        {(["es", "en", "pt"] as Lang[]).map((l) => (
-                            <button
-                                key={l}
-                                onClick={() => {
-                                    setLang(l);
-                                    setIsOpen(false);
-                                }}
-                                style={{ WebkitTapHighlightColor: "transparent" }}
-                                className={`flex-1 py-2.5 rounded-md border-[1.5px] text-[12px] font-bold tracking-[1px] transition-all
-                  ${lang === l
-                                        ? "bg-inver-gold border-inver-gold text-inver-dark"
-                                        : "bg-transparent border-inver-gold/35 text-inver-cream"
-                                    }
-                `}
-                            >
-                                {l.toUpperCase()}
-                            </button>
-                        ))}
-                    </div>
+
                 </div>
             </div>
         </>
